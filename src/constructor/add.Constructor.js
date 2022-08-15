@@ -16,7 +16,7 @@ module.exports.add = async (req, res) => {
         // console.log(response.data)
 
         //reverse the array
-        console.log(response.data)
+        // console.log(response.data)
         for(let each of response.data){
             each.lexicalEntries.reverse()
         }
