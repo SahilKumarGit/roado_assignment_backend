@@ -2,11 +2,12 @@ const express = require('express')
 const { default: mongoose } = require('mongoose')
 const { add } = require('./constructor/add.Constructor')
 const { listing } = require('./constructor/List.Constructor')
+require('dotenv').config()
 const cors = require('cors')
 const port = process.env.PORT || 3001
 const app = express()
 
-mongoose.connect("mongodb+srv://firstDB:zwPu7dwJG0RCXU9f@cluster0.kgij2.mongodb.net/oxford")
+mongoose.connect(process.env.MONGODB)
     .then(_ => console.log('✅ MongoDB Connected!'))
     .catch(e => console.log('👎', e.message))
 
