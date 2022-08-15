@@ -19,10 +19,10 @@ app.get("/list/:word", listing)
 app.post("/add", add)
 
 
-app.use(express.static('./client'));
+app.use(express.static('./frontend'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', { root: 'client/' })
+    res.sendFile('index.html', { root: 'frontend/' })
 );
 
 app.all("/**", (req, res) => {
