@@ -91,7 +91,7 @@ The task is to create a simple Vocabulary web app by using
 ```yaml
 {
   status: true,
-  message: 'Success',
+  message: '...',
   data: { ... }
 }
 ```
