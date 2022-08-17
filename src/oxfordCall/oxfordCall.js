@@ -10,7 +10,7 @@ module.exports.oxfordCallResult = async (word = "piecemeal") => {
             "app_key": process.env.OXFORD_KEY
         }
         const oxford = await axios.get(url, { headers })
-        if (oxford.data.error) return new Error(oxford.data.error)
+        if (oxford.data.error) return { status: false, message: oxford.data.error }
         const data = {
             data: oxford.data.results,
             status: true
@@ -18,6 +18,6 @@ module.exports.oxfordCallResult = async (word = "piecemeal") => {
         return data
     } catch (e) {
         console.log('-Error from oxfordCall.js')
-        return { status: false, message: 'Please enter a valid word!' || e.message }
+        return { status: false, message: 'Please enter a valid word!' }
     }
 }
